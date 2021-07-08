@@ -26,7 +26,9 @@ function setup() {
 	wall3 = new Ground(700, 590, 20, 350);
 
 	var opts = {
+		isStatic:false,
 		restitution:0.3,
+		friction:0,
 		density:1.2
 	}
 
@@ -51,7 +53,7 @@ function draw() {
   fill(255);
   ellipse(ball.position.x, ball.position.y, 40);
 
-  if(keyDown("space")){
+  if(keyDown("up")){
 	  Matter.Body.applyForce(ball, {x:0, y:0}, {x:45, y:500});
   }
 
